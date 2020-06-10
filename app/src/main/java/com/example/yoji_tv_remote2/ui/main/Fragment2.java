@@ -64,15 +64,22 @@ public class Fragment2 extends Fragment {
         button3.setOnClickListener(new buttonClick());
         final Button button4 = root.findViewById(R.id.button4); //down
         button4.setOnClickListener(new buttonClick());
+        button3.setText("DOWN");
         final Button button5 = root.findViewById(R.id.button5);//left
         button5.setOnClickListener(new buttonClick());
+        button3.setText("LEFT");
         final Button button6 = root.findViewById(R.id.button6);//right
         button6.setOnClickListener(new buttonClick());
+        button3.setText("RIGHT");
         final Button button7 = root.findViewById(R.id.button7); // up
         button7.setOnClickListener(new buttonClick());
+        button3.setText("UP");
         final Button button8 = root.findViewById(R.id.button8); // home
         button8.setOnClickListener(new buttonClick());
-
+        button3.setText("HOME");
+        final Button button9 = root.findViewById(R.id.button9); // return
+        button9.setOnClickListener(new buttonClick());
+        button9.setText("RETURN");
 
         return root;
     }
@@ -85,19 +92,22 @@ class buttonClick implements View.OnClickListener {
             yojiWebSocket.sendMessage(view, "KEY_ENTER");
         }
         else if(view.getId() == R.id.button4)    {
-            yojiWebSocket.sendMessage(view, "KEY_DOWN");
+            yojiWebSocket.sendMessage(view, "KEY_DOWN"); //down
         }
         else if(view.getId() == R.id.button5)    {
-            yojiWebSocket.sendMessage(view, "KEY_LEFT");
+            yojiWebSocket.sendMessage(view, "KEY_LEFT"); //left
         }
         else if(view.getId() == R.id.button6)    {
-            yojiWebSocket.sendMessage(view, "KEY_RIGHT");
+            yojiWebSocket.sendMessage(view, "KEY_RIGHT"); //right
         }
         else if(view.getId() == R.id.button7)    {
-            yojiWebSocket.sendMessage(view, "KEY_UP");
+            yojiWebSocket.sendMessage(view, "KEY_UP"); //up
         }
         else if(view.getId() == R.id.button8)    {
-            yojiWebSocket.sendMessage(view, "KEY_CONTENTS"); // SMARTHUB
+            yojiWebSocket.sendMessage(view, "KEY_HOME"); // SMARTHUB
+        }
+        else if(view.getId() == R.id.button9)    {
+            yojiWebSocket.sendMessage(view, "KEY_RETURN"); // return
         }
     }
 }

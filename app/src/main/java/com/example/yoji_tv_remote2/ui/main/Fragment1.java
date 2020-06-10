@@ -17,12 +17,9 @@ import androidx.lifecycle.ViewModelProviders;
 import com.example.yoji_tv_remote2.R;
 import com.example.yoji_tv_remote2.yojiWebSocket;
 import com.neovisionaries.ws.client.WebSocket;
-import com.neovisionaries.ws.client.WebSocketAdapter;
 import com.neovisionaries.ws.client.WebSocketFactory;
 import com.samsung.multiscreen.Search;
 import com.samsung.multiscreen.Service;
-
-import java.io.IOException;
 
 import static com.example.yoji_tv_remote2.yojiWebSocket.createWebSocketYoji;
 import static com.example.yoji_tv_remote2.yojiWebSocket.setWebSocket;
@@ -80,7 +77,7 @@ public class Fragment1 extends Fragment {
         button1.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
                 Log.d("debug", "button1, Perform action on click");
-                ytest();
+                startSamsungSearch();
             }
         });
         final Button button2 = root.findViewById(R.id.button2);
@@ -97,8 +94,7 @@ public class Fragment1 extends Fragment {
         return root;
     }
 
-    // yoji test
-    public void ytest() {
+    public void startSamsungSearch() {
         Log.d("xx", "eee");
 
         // Create a WebSocket factory and set 5000 milliseconds as a timeout
