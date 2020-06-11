@@ -72,6 +72,12 @@ public class Fragment1 extends Fragment {
             }
         });
 
+        // Create a WebSocket factory and set 5000 milliseconds as a timeout
+        // value for socket connection.
+        factory = new WebSocketFactory().setConnectionTimeout(5000);
+        setWebSocket(factory);
+        createWebSocketYoji();  // Only for emulator debug purpose. Without samsung.jar. Remove after testing
+
         // button start
         final Button button1 = root.findViewById(R.id.button1);
         button1.setOnClickListener(new View.OnClickListener() {
@@ -97,11 +103,6 @@ public class Fragment1 extends Fragment {
     public void startSamsungSearch() {
         Log.d("xx", "eee");
 
-        // Create a WebSocket factory and set 5000 milliseconds as a timeout
-        // value for socket connection.
-        factory = new WebSocketFactory().setConnectionTimeout(5000);
-        setWebSocket(factory);
-
         // samsung start
         // Get an instance of Search
         final Search search = Service.search(getActivity().getApplicationContext());
@@ -123,7 +124,7 @@ public class Fragment1 extends Fragment {
                         button1.setText(service.getName());
                         //setContentView(button1);
                         search.stop(); //// You can also stop the discovery process after some amount of time. Preferably once the user has selected a service to work with
-                        createWebSocketYoji();
+                        //createWebSocketYoji();
                     }
                 }
         );

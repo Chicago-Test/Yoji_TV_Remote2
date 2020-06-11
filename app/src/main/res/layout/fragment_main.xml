@@ -26,7 +26,7 @@
         android:layout_width="411dp"
         android:layout_height="44dp"
         android:background="@color/design_default_color_on_secondary"
-        android:text="IP"
+        android:text="search samsung tv"
         android:textColor="?android:attr/colorBackground"
         tools:layout_editor_absoluteY="32dp" />
 
