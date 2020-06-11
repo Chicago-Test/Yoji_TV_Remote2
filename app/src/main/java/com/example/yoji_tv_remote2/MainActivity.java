@@ -13,6 +13,7 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.Button;
 
 import com.example.yoji_tv_remote2.ui.main.SectionsPagerAdapter;
@@ -27,6 +28,9 @@ import java.io.IOException;
 import static com.koushikdutta.async.AsyncServer.LOGTAG;
 
 public class MainActivity extends AppCompatActivity {
+
+    public static int test1=0;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -37,6 +41,13 @@ public class MainActivity extends AppCompatActivity {
         TabLayout tabs = findViewById(R.id.tabs);
         tabs.setupWithViewPager(viewPager);
         FloatingActionButton fab = findViewById(R.id.fab);
+
+//        boolean keepScreenOn=true;
+//        if (keepScreenOn) // Should run in onStop()???
+//            getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
+//        else
+//            getWindow().clearFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
+
 
         fab.setOnClickListener(new View.OnClickListener() {
             @Override

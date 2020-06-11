@@ -14,6 +14,7 @@ import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
 
+import com.example.yoji_tv_remote2.MainActivity;
 import com.example.yoji_tv_remote2.R;
 import com.example.yoji_tv_remote2.yojiWebSocket;
 import com.neovisionaries.ws.client.WebSocket;
@@ -101,9 +102,6 @@ public class Fragment1 extends Fragment {
     }
 
     public void startSamsungSearch() {
-        Log.d("xx", "eee");
-
-        // samsung start
         // Get an instance of Search
         final Search search = Service.search(getActivity().getApplicationContext());
         //final Search search = Service.search(MainActivity.this);
@@ -149,7 +147,6 @@ public class Fragment1 extends Fragment {
                     }
                 }
         );
-        // samsung end
     }
 
 }
