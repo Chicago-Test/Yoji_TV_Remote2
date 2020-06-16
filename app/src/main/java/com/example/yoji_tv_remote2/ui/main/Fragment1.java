@@ -31,8 +31,8 @@ import static com.koushikdutta.async.AsyncServer.LOGTAG;
  */
 public class Fragment1 extends Fragment {
     // yoji
-    WebSocket ws = null; //nv-websocket-client
-    WebSocketFactory factory = null;
+//    WebSocket ws = null; //nv-websocket-client
+//    WebSocketFactory factory = null;
     View root = null;
 
 
@@ -73,11 +73,7 @@ public class Fragment1 extends Fragment {
             }
         });
 
-        // Create a WebSocket factory and set 5000 milliseconds as a timeout
-        // value for socket connection.
-        factory = new WebSocketFactory().setConnectionTimeout(5000);
-        setWebSocket(factory);
-        createWebSocketYoji();  // Only for emulator debug purpose. Without samsung.jar. Remove after testing
+        createWebSocketYoji();
 
         // button start
         final Button button1 = root.findViewById(R.id.button1);
@@ -93,7 +89,10 @@ public class Fragment1 extends Fragment {
             public void onClick(View view) {
                 Log.d("debug", "button2, Perform action on click");
                 //sendMessage(view);
-                yojiWebSocket.sendMessage(view, "KEY_RIGHT");
+                int x = yojiWebSocket.sendMessage(view, "KEY_RIGHT");
+                if (x == -1) {
+                    button2.setText("ERROR!");
+                }
             }
         });
         // button end
@@ -120,9 +119,9 @@ public class Fragment1 extends Fragment {
 
                         final Button button1 = root.findViewById(R.id.button1);
                         button1.setText(service.getName());
+                        button1.setText(service.getUri().toString());
                         //setContentView(button1);
                         search.stop(); //// You can also stop the discovery process after some amount of time. Preferably once the user has selected a service to work with
-                        //createWebSocketYoji();
                     }
                 }
         );
