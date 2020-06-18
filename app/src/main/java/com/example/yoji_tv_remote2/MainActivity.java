@@ -29,7 +29,7 @@ import static com.koushikdutta.async.AsyncServer.LOGTAG;
 
 public class MainActivity extends AppCompatActivity {
 
-    public static int test1=0;
+    public static int test1 = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,12 +42,13 @@ public class MainActivity extends AppCompatActivity {
         tabs.setupWithViewPager(viewPager);
         FloatingActionButton fab = findViewById(R.id.fab);
 
-//        boolean keepScreenOn=true;
-//        if (keepScreenOn) // Should run in onStop()???
-//            getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
-//        else
-//            getWindow().clearFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
-
+        // keep screen on
+        boolean keepScreenOn = true;
+        if (keepScreenOn) // Should run in onStop()???
+            getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
+        else
+            getWindow().clearFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
+        //////////////
 
         fab.setOnClickListener(new View.OnClickListener() {
             @Override

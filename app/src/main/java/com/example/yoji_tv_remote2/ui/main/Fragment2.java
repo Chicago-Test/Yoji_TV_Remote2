@@ -64,19 +64,19 @@ public class Fragment2 extends Fragment {
         button3.setOnClickListener(new buttonClick());
         final Button button4 = root.findViewById(R.id.button4); //down
         button4.setOnClickListener(new buttonClick());
-        button3.setText("DOWN");
+        button4.setText("DOWN");
         final Button button5 = root.findViewById(R.id.button5);//left
         button5.setOnClickListener(new buttonClick());
-        button3.setText("LEFT");
+        button5.setText("LEFT");
         final Button button6 = root.findViewById(R.id.button6);//right
         button6.setOnClickListener(new buttonClick());
-        button3.setText("RIGHT");
+        button6.setText("RIGHT");
         final Button button7 = root.findViewById(R.id.button7); // up
         button7.setOnClickListener(new buttonClick());
-        button3.setText("UP");
+        button7.setText("UP");
         final Button button8 = root.findViewById(R.id.button8); // home
         button8.setOnClickListener(new buttonClick());
-        button3.setText("HOME");
+        button8.setText("HOME");
         final Button button9 = root.findViewById(R.id.button9); // return
         button9.setOnClickListener(new buttonClick());
         button9.setText("RETURN");

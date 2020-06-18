@@ -80,6 +80,7 @@ public class Fragment1 extends Fragment {
         button1.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
                 Log.d("debug", "button1, Perform action on click");
+                yojiWebSocket.initializeSocket();
                 startSamsungSearch();
             }
         });
