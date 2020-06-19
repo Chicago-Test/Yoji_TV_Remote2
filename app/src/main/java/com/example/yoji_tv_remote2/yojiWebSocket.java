@@ -26,7 +26,7 @@ public class yojiWebSocket {
         factory = _factory;
     }
 
-    public static void initializeSocket() {
+    private static void initializeSocket() {
         // Create a WebSocket factory and set 5000 milliseconds as a timeout
         // value for socket connection.
         factory = new WebSocketFactory().setConnectionTimeout(5000);
@@ -51,7 +51,8 @@ public class yojiWebSocket {
             ws.sendText("{\"method\":\"ms.remote.control\",\"params\":{\"Cmd\": \"Click\",\"DataOfCmd\": \"" + strKey + "\",\"Option\": \"false\",\"TypeOfRemote\": \"SendRemoteKey\"}}");
             return 0;
         }else{
-            initializeSocket();
+            //initializeSocket();
+            createWebSocketYoji();
             return -1;
         }
     }
